@@ -1,18 +1,44 @@
+
 <!DOCTYPE html>
 <html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+
+  <!-- ลดการ Cache หน้า Redirect -->
+  <meta http-equiv="Cache-Control"
+        content="no-store, no-cache, must-revalidate, max-age=0">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <meta http-equiv="refresh" content="0; url=https://script.google.com/macros/s/AKfycbxZVVHSiB0Kfm1NRVb0nN7WQKkEzrcddZ_ZNPlNamj1Ej1DTtLtaYHAiE_M2H1LYEFk/exec">
+
   <title>กำลังเปิดแบบฟอร์ม...</title>
+
   <script>
-    window.location.replace('https://script.google.com/macros/s/AKfycbxZVVHSiB0Kfm1NRVb0nN7WQKkEzrcddZ_ZNPlNamj1Ej1DTtLtaYHAiE_M2H1LYEFk/exec');
+    (function () {
+      const target =
+        "https://script.google.com/macros/s/AKfycbxZVVHSiB0Kfm1NRVb0nN7WQKkEzrcddZ_ZNPlNamj1Ej1DTtLtaYHAiE_M2H1LYEFk/exec";
+
+      // สร้าง URL ใหม่ทุกครั้งเพื่อเลี่ยง URL Cache
+      const url = new URL(target);
+      url.searchParams.set("_ts", Date.now().toString());
+      url.searchParams.set(
+        "_r",
+        Math.random().toString(36).slice(2)
+      );
+
+      // Redirect โดยไม่เพิ่มประวัติหน้านี้
+      window.location.replace(url.toString());
+    })();
   </script>
 </head>
+
 <body>
-  <p>กำลังนำไปยังแบบฟอร์ม… <a href="https://script.google.com/macros/s/AKfycbxZVVHSiB0Kfm1NRVb0nN7WQKkEzrcddZ_ZNPlNamj1Ej1DTtLtaYHAiE_M2H1LYEFk/exec">คลิกที่นี่หากหน้าเว็บไม่เปลี่ยน</a></p>
+  <p>กำลังเปิดแบบฟอร์ม...</p>
+  <p>
+    หากไม่เปลี่ยนหน้าอัตโนมัติ
+    <a href="https://script.google.com/macros/s/AKfycbxZVVHSiB0Kfm1NRVb0nN7WQKkEzrcddZ_ZNPlNamj1Ej1DTtLtaYHAiE_M2H1LYEFk/exec">
+      คลิกที่นี่
+    </a>
+  </p>
 </body>
 </html>
